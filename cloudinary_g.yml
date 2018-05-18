@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: 'goodok21'
+  api_key: '659139152597986'
+  api_secret: 'Gu6Gnhgblu74ApnrKACCENEVfcY'
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: 'goodok21'
+  api_key: '659139152597986'
+  api_secret: 'Gu6Gnhgblu74ApnrKACCENEVfcY'
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: 'goodok21'
+  api_key: '659139152597986'
+  api_secret: 'Gu6Gnhgblu74ApnrKACCENEVfcY'
+  enhance_image_tag: true
+  static_image_support: false

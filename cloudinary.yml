@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: 'onemap-co'
+  api_key: '467698848195651'
+  api_secret: 'ya2mX_kNtFG4omnouxxWW3ozQHo'
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: 'onemap-co'
+  api_key: '467698848195651'
+  api_secret: 'ya2mX_kNtFG4omnouxxWW3ozQHo'
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: 'onemap-co'
+  api_key: '467698848195651'
+  api_secret: 'ya2mX_kNtFG4omnouxxWW3ozQHo'
+  enhance_image_tag: true
+  static_image_support: false
