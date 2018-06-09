@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Breadcrumb, Table, Button, Icon } from 'antd';
 import { Link } from 'react-router-dom';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 
 import { campaignColumns } from '../shared/constants/campaignConstants';
 
@@ -43,6 +45,9 @@ class Campaigns extends Component {
                 .map(campaign => campaign.id == node.id ? node : campaign)
             };
           }
+          case 'DELETED': {
+            return { allCampaigns: previousState.allCampaigns.filter(campaign => campaign.id != previousValues.id) };
+          };
           default:
             return previousState;
         }
@@ -90,6 +95,23 @@ class Campaigns extends Component {
     )
   }
 }
+
+const FETCH_CAMPAIGNS = gql`
+  query FetchCampaigns {
+    allCampaigns {
+      id
+      createdAt
+      name
+      description
+      active
+      defaultPlace {
+        id
+        placeName
+      }
+      pushNotificationActive
+    }
+  }
+`
 
 const CampaignsScreen = graphql(FETCH_CAMPAIGNS, {
   name: 'fetchCampaigns',
