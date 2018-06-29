@@ -10,6 +10,7 @@ import {
   renderDateTime,
 } from '../../shared/utils/form_components';
 import { required } from '../../shared/utils/form_validations';
+import CustomTags from '../../stories/components/CustomTags';
 import CloudinaryFileUpload from '../../shared/components/CloudinaryFileUpload';
 
 const FormItem = Form.Item;
@@ -27,6 +28,7 @@ class EventForm extends Component {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.handleDeleteTag = this.handleDeleteTag.bind(this);
+    this.handleUpdateTags = this.handleUpdateTags.bind(this);
     this.handleUploadWidget = this.handleUploadWidget.bind(this);
   }
 
@@ -36,6 +38,11 @@ class EventForm extends Component {
       availableCities: this.state.tags,
       feedNotificationImg: this.state.file,
     });
+  }
+
+  handleDeleteTag = (removedTag) => {
+    const tags = this.state.tags.filter(tag => tag != removedTag);
+    this.setState({ tags });
   }
 
   handleUpdateTags = () => {
